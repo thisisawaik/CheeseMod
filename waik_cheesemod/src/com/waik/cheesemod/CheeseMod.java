@@ -51,23 +51,25 @@ public class CheeseMod {
 		GameRegistry.registerBlock(cheeseLamp, "cheeseLamp");
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 
-		// Recipes
+		// Shapeless recipes
+		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
+				Items.milk_bucket, Items.milk_bucket, Items.milk_bucket);
+
+		// Shaped recipes
 		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), "AAA", 'A',
 				cheeseBlock);
 
-		GameRegistry.addShapedRecipe(new ItemStack(cheeseSandwich, 3), "A",
-				"B", "A", 'A', Items.bread, 'B', cheeseSlice);
+		GameRegistry.addRecipe(new ItemStack(cheeseSandwich, 3), "A", "B", "A",
+				'A', Items.bread, 'B', cheeseSlice);
 
 		GameRegistry.addRecipe(new ItemStack(cheeseLamp, 1), "A", "B", 'A',
 				cheeseBlock, 'B', Blocks.torch);
+
 	}
 
 	// Initialization
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
-				Items.milk_bucket, Items.milk_bucket, Items.milk_bucket);
-
 		MinecraftForge.EVENT_BUS.register(new CheeseBlock());
 	}
 }
