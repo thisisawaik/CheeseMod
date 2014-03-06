@@ -23,4 +23,6 @@ public class CheeseMod {
 	public void preInit(FMLPreInitializationEvent event) {
 		GameRegistry.registerBlock(cheeseBlock, "cheeseBlock");
 	}
+	
+	//valami
 }
