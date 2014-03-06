@@ -3,13 +3,15 @@ package com.waik.cheesemod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
 public class CheeseMod {
@@ -23,6 +25,10 @@ public class CheeseMod {
 	public void preInit(FMLPreInitializationEvent event) {
 		GameRegistry.registerBlock(cheeseBlock, "cheeseBlock");
 	}
-	
-	//valami
+
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
+				Items.milk_bucket, Items.milk_bucket, Items.milk_bucket);
+	}
 }
