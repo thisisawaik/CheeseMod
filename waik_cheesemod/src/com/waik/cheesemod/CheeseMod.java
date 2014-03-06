@@ -29,7 +29,7 @@ public class CheeseMod {
 			.setUnlocalizedName("cheeseSlice").setCreativeTab(tabCheese)
 			.setTextureName("cheesemod:cheese_slice");
 
-	public static Item cheeseSandwich = new CheeseSandwich(500, 7, true)
+	public static Item cheeseSandwich = new CheeseSandwich(500, 5, true)
 			.setCreativeTab(tabCheese);
 
 	public final static Block cheeseLamp = new CheeseLamp(Material.rock)
