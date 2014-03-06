@@ -1,8 +1,8 @@
 package com.waik.cheesemod;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.block.Block;
 
 public class CheeseLamp extends Block {
 
@@ -11,6 +11,6 @@ public class CheeseLamp extends Block {
 	}
 
 	public void registerBlockIcons(IIconRegister reg) {
-		this.blockIcon = reg.registerIcon("cheesemod:cheeseLamp");
+		this.blockIcon = reg.registerIcon("cheesemod:cheese_lamp");
 	}
 }
