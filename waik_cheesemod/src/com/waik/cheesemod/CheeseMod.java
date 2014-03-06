@@ -27,6 +27,10 @@ public class CheeseMod {
 	public static Item cheeseSlice = new Item()
 			.setUnlocalizedName("cheeseSlice").setCreativeTab(tabCheese)
 			.setTextureName("cheesemod:cheeseSlice");
+	
+	public static Item cheeseSandwich = new Item()
+			.setUnlocalizedName("cheeseSandwich").setCreativeTab(tabCheese)
+			.setTextureName("cheesemod:cheeseSandwich");
 
 	public final static Block cheeseBlock = new CheeseBlock().setBlockName(
 			"cheeseBlock").setCreativeTab(tabCheese);
@@ -39,6 +43,7 @@ public class CheeseMod {
 
 		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), new Object[] {
 				"AAA", 'A', cheeseBlock });
+		GameRegistry.addShapedRecipe(new ItemStack(cheeseSandwich, 3), " X ", " Y ", " X ", 'X', Items.bread, 'Y', cheeseSlice);
 	}
 
 	@EventHandler
