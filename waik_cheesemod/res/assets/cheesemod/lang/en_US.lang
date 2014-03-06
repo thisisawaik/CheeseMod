@@ -1,1 +1,3 @@
 tile.cheeseBlock.name=Cheese Block
+item.cheeseSlice.name=Cheese Slice
+itemGroup.CheeseModTab=Cheese Stuff
