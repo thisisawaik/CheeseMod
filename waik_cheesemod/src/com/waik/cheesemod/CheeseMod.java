@@ -11,6 +11,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
 public class CheeseMod {
@@ -27,10 +28,9 @@ public class CheeseMod {
 	public static Item cheeseSlice = new Item()
 			.setUnlocalizedName("cheeseSlice").setCreativeTab(tabCheese)
 			.setTextureName("cheesemod:cheeseSlice");
-	
-	public static Item cheeseSandwich = new Item()
-			.setUnlocalizedName("cheeseSandwich").setCreativeTab(tabCheese)
-			.setTextureName("cheesemod:cheeseSandwich");
+
+	public static Item cheeseSandwich = new CheeseSandwich(500, 7, true)
+			.setCreativeTab(tabCheese);
 
 	public final static Block cheeseBlock = new CheeseBlock().setBlockName(
 			"cheeseBlock").setCreativeTab(tabCheese);
@@ -42,9 +42,12 @@ public class CheeseMod {
 		GameRegistry.registerItem(cheeseSlice, "cheeseSlice");
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 
+		LanguageRegistry.addName(cheeseSandwich, "cheeseSandwich");
+
 		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), new Object[] {
 				"AAA", 'A', cheeseBlock });
-		GameRegistry.addShapedRecipe(new ItemStack(cheeseSandwich, 3), " X ", " Y ", " X ", 'X', Items.bread, 'Y', cheeseSlice);
+		GameRegistry.addShapedRecipe(new ItemStack(cheeseSandwich, 3), " X ",
+				" Y ", " X ", 'X', Items.bread, 'Y', cheeseSlice);
 	}
 
 	@EventHandler
