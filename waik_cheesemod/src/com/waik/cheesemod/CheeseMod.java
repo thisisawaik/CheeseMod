@@ -13,8 +13,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
 public class CheeseMod {
-	public static final String MODID = "testmod";
-	public static final String VERSION = "1.0";
+	public static final String MODID = "cheesemod";
+	public static final String VERSION = "0.0.1";
 
 	public final static Block cheeseBlock = new CheeseBlock(Material.cake)
 			.setBlockName("cheeseBlock").setCreativeTab(CreativeTabs.tabFood);
