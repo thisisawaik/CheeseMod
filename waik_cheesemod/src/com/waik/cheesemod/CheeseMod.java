@@ -24,7 +24,6 @@ public class CheeseMod {
 		public Item getTabIconItem() {
 			return cheeseSlice;
 		}
-
 	};
 
 	public static Item cheeseSlice = new Item()

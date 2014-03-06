@@ -19,11 +19,10 @@ public class CheeseBlock extends Block {
 		this.blockIcon = reg.registerIcon("cheesemod:cheese_block");
 	}
 
-	@SubscribeEvent
-	public void onBlockClicked(PlayerInteractEvent event) {
-		System.out.println("cheese clicked");
-		EntityPlayer player = event.entityPlayer;
-		player.addChatMessage(new ChatComponentText(
-				"Attention! Someone somewhere clicked a cheese!!!"));
-	}
+	/*
+	 * @SubscribeEvent public void onBlockClicked(PlayerInteractEvent event) {
+	 * System.out.println("cheese clicked"); EntityPlayer player =
+	 * event.entityPlayer; player.addChatMessage(new ChatComponentText(
+	 * "Attention! Someone somewhere clicked a cheese!!!")); }
+	 */
 }

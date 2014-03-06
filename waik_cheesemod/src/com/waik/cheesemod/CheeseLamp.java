@@ -13,6 +13,4 @@ public class CheeseLamp extends Block {
 	public void registerBlockIcons(IIconRegister reg) {
 		this.blockIcon = reg.registerIcon("cheesemod:cheeseLamp");
 	}
-
-	
 }
