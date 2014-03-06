@@ -33,9 +33,9 @@ public class CheeseMod {
 
 	public static Item cheeseSandwich = new CheeseSandwich(500, 7, true)
 			.setCreativeTab(tabCheese);
-	
+
 	public final static Block cheeseLamp = new CheeseLamp(Material.rock)
-	.setBlockName("cheeseLamp").setCreativeTab(tabCheese);
+			.setBlockName("cheeseLamp").setCreativeTab(tabCheese);
 
 	public final static Block cheeseBlock = new CheeseBlock().setBlockName(
 			"cheeseBlock").setCreativeTab(tabCheese);
@@ -47,7 +47,7 @@ public class CheeseMod {
 		GameRegistry.registerItem(cheeseSlice, "cheeseSlice");
 		GameRegistry.registerBlock(cheeseLamp, "cheeseLamp");
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
-		
+
 		cheeseLamp.setLightLevel(1F);
 
 		LanguageRegistry.addName(cheeseSandwich, "cheeseSandwich");
@@ -59,9 +59,7 @@ public class CheeseMod {
 				" Y ", " X ", 'X', Items.bread, 'Y', cheeseSlice);
 
 		GameRegistry.addRecipe(new ItemStack(cheeseLamp, 1), new Object[] {
-			"A",
-			"B",
-			'A', cheeseBlock, 'B', Blocks.torch });
+				"A", "B", 'A', cheeseBlock, 'B', Blocks.torch });
 	}
 
 	@EventHandler
