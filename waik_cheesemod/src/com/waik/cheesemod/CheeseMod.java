@@ -25,9 +25,8 @@ public class CheeseMod {
 		}
 	};
 
-	public static Item cheeseSlice = new Item()
-			.setUnlocalizedName("cheeseSlice").setCreativeTab(tabCheese)
-			.setTextureName("cheesemod:cheese_slice");
+	public static Item cheeseSlice = new CheeseSlice(501, 3, true)
+			.setCreativeTab(tabCheese);
 
 	public static Item cheeseSandwich = new CheeseSandwich(500, 5, true)
 			.setCreativeTab(tabCheese);
