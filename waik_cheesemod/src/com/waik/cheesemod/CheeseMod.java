@@ -52,14 +52,14 @@ public class CheeseMod {
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 
 		// Recipes
-		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), new Object[] {
-				"AAA", 'A', cheeseBlock });
+		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), "AAA", 'A',
+				cheeseBlock);
 
 		GameRegistry.addShapedRecipe(new ItemStack(cheeseSandwich, 3), "A",
 				"B", "A", 'A', Items.bread, 'B', cheeseSlice);
 
-		GameRegistry.addRecipe(new ItemStack(cheeseLamp, 1), new Object[] {
-				"A", "B", 'A', cheeseBlock, 'B', Blocks.torch });
+		GameRegistry.addRecipe(new ItemStack(cheeseLamp, 1), "A", "B", 'A',
+				cheeseBlock, 'B', Blocks.torch);
 	}
 
 	// Initialization
