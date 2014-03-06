@@ -40,6 +40,7 @@ public class CheeseMod {
 
 		GameRegistry.registerBlock(cheeseBlock, "cheeseBlock");
 		GameRegistry.registerItem(cheeseSlice, "cheeseSlice");
+		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 
 		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), new Object[] {
 				"AAA", 'A', cheeseBlock });
