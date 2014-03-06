@@ -28,10 +28,10 @@ public class CheeseMod {
 	};
 
 	// Items
-	public static Item cheeseSlice = new CheeseSlice(501, 3, true)
+	public static Item cheeseSlice = new CheeseSlice(2, true)
 			.setCreativeTab(tabCheese);
 
-	public static Item cheeseSandwich = new CheeseSandwich(500, 5, true)
+	public static Item cheeseSandwich = new CheeseSandwich(5, true)
 			.setCreativeTab(tabCheese);
 
 	// Blocks
