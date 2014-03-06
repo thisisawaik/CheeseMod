@@ -8,6 +8,7 @@ public class CheeseLamp extends Block {
 
 	protected CheeseLamp(Material arg0) {
 		super(arg0);
+		this.setLightLevel(1f);
 	}
 
 	public void registerBlockIcons(IIconRegister reg) {

@@ -16,37 +16,42 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
 public class CheeseMod {
+	// Mod properties
 	public static final String MODID = "cheesemod";
 	public static final String VERSION = "0.0.1";
 
+	// Creative tabs
 	public static CreativeTabs tabCheese = new CreativeTabs("CheeseModTab") {
 		public Item getTabIconItem() {
 			return cheeseSlice;
 		}
 	};
 
+	// Items
 	public static Item cheeseSlice = new CheeseSlice(501, 3, true)
 			.setCreativeTab(tabCheese);
 
 	public static Item cheeseSandwich = new CheeseSandwich(500, 5, true)
 			.setCreativeTab(tabCheese);
 
+	// Blocks
 	public final static Block cheeseLamp = new CheeseLamp(Material.rock)
 			.setBlockName("cheeseLamp").setCreativeTab(tabCheese);
 
 	public final static Block cheeseBlock = new CheeseBlock().setBlockName(
 			"cheeseBlock").setCreativeTab(tabCheese);
 
+	// Pre-initialization
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
+		// Registering items and blocks
 		GameRegistry.registerBlock(cheeseBlock, "cheeseBlock");
 		GameRegistry.registerItem(cheeseSlice, "cheeseSlice");
 		GameRegistry.registerBlock(cheeseLamp, "cheeseLamp");
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 
-		cheeseLamp.setLightLevel(1F);
-
+		// Recipes
 		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), new Object[] {
 				"AAA", 'A', cheeseBlock });
 
@@ -57,6 +62,7 @@ public class CheeseMod {
 				"A", "B", 'A', cheeseBlock, 'B', Blocks.torch });
 	}
 
+	// Events
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
