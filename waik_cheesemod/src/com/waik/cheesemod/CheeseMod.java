@@ -16,11 +16,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
 public class CheeseMod {
-	// Mod properties
+	// Mod Properties
 	public static final String MODID = "cheesemod";
 	public static final String VERSION = "0.0.1";
 
-	// Creative tabs
+	// Creative Tabs
 	public static CreativeTabs tabCheese = new CreativeTabs("CheeseModTab") {
 		public Item getTabIconItem() {
 			return cheeseSlice;
@@ -62,7 +62,7 @@ public class CheeseMod {
 				"A", "B", 'A', cheeseBlock, 'B', Blocks.torch });
 	}
 
-	// Events
+	// Initialization
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
