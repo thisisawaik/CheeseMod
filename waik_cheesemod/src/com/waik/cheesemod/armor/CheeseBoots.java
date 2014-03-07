@@ -6,7 +6,7 @@ public class CheeseBoots extends ItemArmor
 {
 	public CheeseBoots(ArmorMaterial cheeseArmor)
 	{
-		super(cheeseArmor, 3, 0);
+		super(cheeseArmor, 0, 3);
 		this.setUnlocalizedName("cheeseBoots");
 		this.setTextureName("cheesemod:cheese_boots");
 	}
