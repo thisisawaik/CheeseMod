@@ -26,22 +26,25 @@ public class CheeseMod {
 		}
 	};
 
-	// Items
-	public static Item cheeseSlice = new CheeseSlice()
-			.setCreativeTab(tabCheese);
-
-	public static Item cheeseSandwich = new CheeseSandwich()
-			.setCreativeTab(tabCheese);
-
-	public static Item toast = new Toast().setCreativeTab(tabCheese)
-			.setCreativeTab(tabCheese);
-
 	// Blocks
 	public final static Block cheeseLamp = new CheeseLamp().setBlockName(
 			"cheeseLamp").setCreativeTab(tabCheese);
 
 	public final static Block cheeseBlock = new CheeseBlock().setBlockName(
 			"cheeseBlock").setCreativeTab(tabCheese);
+
+	// Items
+	public static Item cheesePowder = new CheesePowder()
+			.setCreativeTab(tabCheese);
+
+	// Food
+	public static Item cheeseSlice = new CheeseSlice()
+			.setCreativeTab(tabCheese);
+
+	public static Item cheeseSandwich = new CheeseSandwich()
+			.setCreativeTab(tabCheese);
+
+	public static Item toast = new Toast().setCreativeTab(tabCheese);
 
 	// Pre-initialization
 	@EventHandler
@@ -53,10 +56,13 @@ public class CheeseMod {
 		GameRegistry.registerBlock(cheeseLamp, "cheeseLamp");
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 		GameRegistry.registerItem(toast, "toast");
+		GameRegistry.registerItem(cheesePowder, "cheesePowder");
 
 		// Shapeless recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
 				Items.milk_bucket, Items.milk_bucket, Items.milk_bucket);
+		GameRegistry.addShapelessRecipe(new ItemStack(cheesePowder, 9),
+				cheeseBlock);
 
 		// Shaped recipes
 		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), "AAA", 'A',
