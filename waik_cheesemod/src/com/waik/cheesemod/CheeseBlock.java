@@ -3,6 +3,9 @@ package com.waik.cheesemod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.world.World;
 
 public class CheeseBlock extends Block {
 
@@ -15,10 +18,14 @@ public class CheeseBlock extends Block {
 		this.blockIcon = reg.registerIcon("cheesemod:cheese_block");
 	}
 
-	/*
-	 * @SubscribeEvent public void onBlockClicked(PlayerInteractEvent event) {
-	 * System.out.println("cheese clicked"); EntityPlayer player =
-	 * event.entityPlayer; player.addChatMessage(new ChatComponentText(
-	 * "Attention! Someone somewhere clicked a cheese!!!")); }
-	 */
+	@Override
+	public boolean onBlockActivated(World world, int x, int y, int z,
+			EntityPlayer player, int par6, float par7, float par8, float par9) {
+
+		player.addChatMessage(new ChatComponentText(
+				"Attention! Someone somewhere right clicked a cheese!!!"));
+
+		return true;
+	}
+
 }
