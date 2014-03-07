@@ -33,6 +33,9 @@ public class CheeseMod {
 	public static Item cheeseSandwich = new CheeseSandwich()
 			.setCreativeTab(tabCheese);
 
+	public static Item toast = new Toast().setCreativeTab(tabCheese)
+			.setCreativeTab(tabCheese);
+
 	// Blocks
 	public final static Block cheeseLamp = new CheeseLamp().setBlockName(
 			"cheeseLamp").setCreativeTab(tabCheese);
@@ -49,6 +52,7 @@ public class CheeseMod {
 		GameRegistry.registerItem(cheeseSlice, "cheeseSlice");
 		GameRegistry.registerBlock(cheeseLamp, "cheeseLamp");
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
+		GameRegistry.registerItem(toast, "toast");
 
 		// Shapeless recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
@@ -63,6 +67,10 @@ public class CheeseMod {
 
 		GameRegistry.addRecipe(new ItemStack(cheeseLamp, 1), "A", "B", 'A',
 				cheeseBlock, 'B', Blocks.torch);
+
+		// Smeltings
+		GameRegistry.addSmelting(new ItemStack(cheeseSandwich), new ItemStack(
+				toast), 0.35f);
 
 	}
 
