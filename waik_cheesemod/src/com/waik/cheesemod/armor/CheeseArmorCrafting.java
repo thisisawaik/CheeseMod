@@ -11,38 +11,28 @@ public class CheeseArmorCrafting
 {
 	private String[][] recipePatterns = new String[][]
 	{
-	{ "XXX", "X X" },
-	{ "X X", "XXX", "XXX" },
-	{ "XXX", "X X", "X X" },
-	{ "X X", "X X" } };
-	private Object[][] recipeItems;
+	{ "AAA", "A A" },
+	{ "A A", "AAA", "AAA" },
+	{ "AAA", "A A", "A A" },
+	{ "A A", "A A" } };
+	private Object[] recipeItems;
 	
 	public CheeseArmorCrafting()
 	{
-		this.recipeItems = new Object[][]
-		{
-		{ CheeseMod.cheese_block },
-		{ CheeseMod.cheese_helmet },
-		{ CheeseMod.cheese_chestplate },
-		{ CheeseMod.cheese_leggings },
-		{ CheeseMod.cheese_boots } };
+		this.recipeItems = new Object[]
+		{ CheeseMod.cheese_helmet, CheeseMod.cheese_chestplate, CheeseMod.cheese_leggings,
+				CheeseMod.cheese_boots };
 	}
 	
-	/**
-	 * Adds the armor recipes to the CraftingManager.
-	 */
 	public void addRecipes()
 	{
-		for (int i = 0; i < this.recipeItems[0].length; ++i)
+		
+		for (int i = 0; i < this.recipeItems.length - 1; ++i)
 		{
-			Object object = this.recipeItems[0][i];
-			
-			for (int j = 0; j < this.recipeItems.length - 1; ++j)
-			{
-				Item item = (Item) this.recipeItems[j + 1][i];
-				GameRegistry.addRecipe(new ItemStack(item), new Object[]
-				{ this.recipePatterns[j], 'X', object });
-			}
+			Item item = (Item) this.recipeItems[i];
+			GameRegistry.addRecipe(new ItemStack(item), new Object[]
+			{ this.recipePatterns[i], 'A', CheeseMod.cheese_block });
 		}
+		
 	}
 }
