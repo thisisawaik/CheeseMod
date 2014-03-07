@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 
+import com.waik.cheesemod.armor.CheeseArmorCrafting;
 import com.waik.cheesemod.armor.CheeseBoots;
 import com.waik.cheesemod.armor.CheeseChestplate;
 import com.waik.cheesemod.armor.CheeseHelmet;
@@ -115,6 +116,7 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_chestplate, "cheese_chestplate");
 		GameRegistry.registerItem(cheese_leggings, "cheese_leggings");
 		GameRegistry.registerItem(cheese_boots, "cheese_boots");
+		
 	}
 	
 	// Initialization
@@ -137,6 +139,8 @@ public class CheeseMod
 		
 		GameRegistry.addRecipe(new ItemStack(cheese_lamp, 1), "A", "B", 'A', cheese_block, 'B',
 				Blocks.torch);
+		
+		(new CheeseArmorCrafting()).addRecipes();
 		
 		// Smelting recipes
 		GameRegistry.addSmelting(new ItemStack(cheese_slice), new ItemStack(smoked_cheese_slice),
