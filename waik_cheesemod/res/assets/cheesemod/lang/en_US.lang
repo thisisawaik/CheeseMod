@@ -6,3 +6,11 @@ tile.cheeseLamp.name=Cheese Lamp
 item.cheeseSlice.name=Cheese Slice
 item.smokedCheeseSlice.name=Smoked Cheese Slice
 item.cheeseSandwich.name=Cheese Sandwich
+item.cheesePowder.name=Cheese Powder
+item.toast.name=Toast
+
+item.cheeseAxe.name = Cheese Axe
+item.cheeseHoe.name = Cheese Hoe
+item.cheesePickaxe.name = Cheese Pickaxe
+item.cheeseSpade.name = Cheese Spade
+item.cheeseSword.name = Cheese Sword
