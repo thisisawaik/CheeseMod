@@ -1,17 +1,5 @@
 package com.waik.cheesemod;
 
-import com.waik.cheesemod.blocks.CheeseBlock;
-import com.waik.cheesemod.blocks.CheeseLamp;
-import com.waik.cheesemod.items.CheesePowder;
-import com.waik.cheesemod.items.CheeseSandwich;
-import com.waik.cheesemod.items.CheeseSlice;
-import com.waik.cheesemod.items.Toast;
-import com.waik.cheesemod.tools.CheeseAxe;
-import com.waik.cheesemod.tools.CheeseHoe;
-import com.waik.cheesemod.tools.CheesePickaxe;
-import com.waik.cheesemod.tools.CheeseShovel;
-import com.waik.cheesemod.tools.CheeseSword;
-
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -21,6 +9,20 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
+
+import com.waik.cheesemod.blocks.CheeseBlock;
+import com.waik.cheesemod.blocks.CheeseLamp;
+import com.waik.cheesemod.items.CheesePowder;
+import com.waik.cheesemod.items.CheeseSandwich;
+import com.waik.cheesemod.items.CheeseSlice;
+import com.waik.cheesemod.items.SmokedCheeseSlice;
+import com.waik.cheesemod.items.Toast;
+import com.waik.cheesemod.tools.CheeseAxe;
+import com.waik.cheesemod.tools.CheeseHoe;
+import com.waik.cheesemod.tools.CheesePickaxe;
+import com.waik.cheesemod.tools.CheeseShovel;
+import com.waik.cheesemod.tools.CheeseSword;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -55,6 +57,9 @@ public class CheeseMod {
 	public static Item cheeseSlice = new CheeseSlice()
 			.setCreativeTab(tabCheese);
 
+	public static Item smokedCheeseSlice = new SmokedCheeseSlice()
+			.setCreativeTab(tabCheese);
+
 	public static Item cheeseSandwich = new CheeseSandwich()
 			.setCreativeTab(tabCheese);
 
@@ -83,6 +88,7 @@ public class CheeseMod {
 		// Registering items and blocks
 		GameRegistry.registerBlock(cheeseBlock, "cheeseBlock");
 		GameRegistry.registerItem(cheeseSlice, "cheeseSlice");
+		GameRegistry.registerItem(smokedCheeseSlice, "smokedCheeseSlice");
 		GameRegistry.registerBlock(cheeseLamp, "cheeseLamp");
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 		GameRegistry.registerItem(toast, "toast");
@@ -111,6 +117,8 @@ public class CheeseMod {
 				cheeseBlock, 'B', Blocks.torch);
 
 		// Smeltings
+		GameRegistry.addSmelting(new ItemStack(cheeseSlice), new ItemStack(
+				smokedCheeseSlice), 0.25f);
 		GameRegistry.addSmelting(new ItemStack(cheeseSandwich), new ItemStack(
 				toast), 0.35f);
 

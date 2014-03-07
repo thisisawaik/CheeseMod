@@ -6,7 +6,7 @@ public class CheeseSandwich extends ItemFood {
 	static int foodPoints = 5;
 
 	public CheeseSandwich() {
-		super(foodPoints, true);
+		super(foodPoints, false);
 		this.setUnlocalizedName("cheeseSandwich");
 		this.setTextureName("cheesemod:cheese_sandwich");
 	}
