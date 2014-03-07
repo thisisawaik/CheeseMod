@@ -67,7 +67,7 @@ public class CheeseMod
 	public static Item toast = new Toast().setCreativeTab(tabCheese);
 	
 	// Tool materials
-	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 2, 30, 5.0f, 2.5f, 10);
+	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 3, 32, 2.0f, 0.0f, 40);
 	
 	// Armor materials
 	public static ArmorMaterial cheeseArmor = EnumHelper.addArmorMaterial("Cheese2", 3, new int[]
