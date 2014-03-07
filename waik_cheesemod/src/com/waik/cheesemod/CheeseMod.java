@@ -110,6 +110,11 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_hoe, "cheese_hoe");
 		GameRegistry.registerItem(cheese_axe, "cheese_axe");
 		GameRegistry.registerItem(cheese_spade, "cheese_spade");
+		
+		GameRegistry.registerItem(cheese_helmet, "cheese_helmet");
+		GameRegistry.registerItem(cheese_chestplate, "cheese_chestplate");
+		GameRegistry.registerItem(cheese_leggings, "cheese_leggings");
+		GameRegistry.registerItem(cheese_boots, "cheese_boots");
 	}
 	
 	// Initialization

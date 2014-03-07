@@ -6,7 +6,7 @@ public class CheeseLeggings extends ItemArmor
 {
 	public CheeseLeggings(ArmorMaterial cheeseArmor)
 	{
-		super(cheeseArmor, 2, 0);
+		super(cheeseArmor, 0, 2);
 		this.setUnlocalizedName("cheeseLeggings");
 		this.setTextureName("cheesemod:cheese_leggings");
 	}

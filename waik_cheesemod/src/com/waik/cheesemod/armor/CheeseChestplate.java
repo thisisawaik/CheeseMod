@@ -6,8 +6,8 @@ public class CheeseChestplate extends ItemArmor
 {
 	public CheeseChestplate(ArmorMaterial cheeseArmor)
 	{
-		super(cheeseArmor, 1, 0);
-		this.setUnlocalizedName("cheeseHelmet");
-		this.setTextureName("cheesemod:cheese_helmet");
+		super(cheeseArmor, 0, 1);
+		this.setUnlocalizedName("cheeseChestplate");
+		this.setTextureName("cheesemod:cheese_chestplate");
 	}
 }
