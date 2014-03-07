@@ -6,10 +6,15 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 
+import com.waik.cheesemod.armor.CheeseBoots;
+import com.waik.cheesemod.armor.CheeseChestplate;
+import com.waik.cheesemod.armor.CheeseHelmet;
+import com.waik.cheesemod.armor.CheeseLeggings;
 import com.waik.cheesemod.blocks.CheeseBlock;
 import com.waik.cheesemod.blocks.CheeseLamp;
 import com.waik.cheesemod.items.CheesePowder;
@@ -57,15 +62,16 @@ public class CheeseMod
 	
 	// Food
 	public static Item cheese_slice = new CheeseSlice().setCreativeTab(tabCheese);
-	
 	public static Item smoked_cheese_slice = new SmokedCheeseSlice().setCreativeTab(tabCheese);
-	
 	public static Item cheese_sandwich = new CheeseSandwich().setCreativeTab(tabCheese);
-	
 	public static Item toast = new Toast().setCreativeTab(tabCheese);
 	
 	// Tool materials
 	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 2, 30, 5.0f, 2.5f, 10);
+	
+	// Armor materials
+	public static ArmorMaterial cheeseArmor = EnumHelper.addArmorMaterial("Cheese2", 3, new int[]
+	{ 2, 3, 2, 1 }, 12);
 	
 	// Tools
 	public final static Item cheese_pickaxe = new CheesePickaxe(cheese).setCreativeTab(tabCheese);
@@ -73,6 +79,18 @@ public class CheeseMod
 	public final static Item cheese_hoe = new CheeseHoe(cheese).setCreativeTab(tabCheese);
 	public final static Item cheese_axe = new CheeseAxe(cheese).setCreativeTab(tabCheese);
 	public final static Item cheese_spade = new CheeseSpade(cheese).setCreativeTab(tabCheese);
+	
+	// Armor
+	public final static Item cheese_helmet = new CheeseHelmet(cheeseArmor)
+			.setCreativeTab(tabCheese);
+	
+	public final static Item cheese_chestplate = new CheeseChestplate(cheeseArmor)
+			.setCreativeTab(tabCheese);
+	
+	public final static Item cheese_leggings = new CheeseLeggings(cheeseArmor)
+			.setCreativeTab(tabCheese);
+	
+	public final static Item cheese_boots = new CheeseBoots(cheeseArmor).setCreativeTab(tabCheese);
 	
 	// Pre-initialization
 	@EventHandler
