@@ -3,7 +3,7 @@ package com.waik.cheesemod.items;
 import net.minecraft.item.ItemFood;
 
 public class CheeseSandwich extends ItemFood {
-	static int foodPoints = 5;
+	static int foodPoints = 6;
 
 	public CheeseSandwich() {
 		super(foodPoints, false);

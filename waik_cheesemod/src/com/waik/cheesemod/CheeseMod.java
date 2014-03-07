@@ -110,10 +110,10 @@ public class CheeseMod {
 		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), "AAA", 'A',
 				cheeseBlock);
 
-		GameRegistry.addRecipe(new ItemStack(cheeseSandwich, 1), "A", "B", "A",
+		GameRegistry.addRecipe(new ItemStack(cheeseSandwich, 2), "A", "B", "A",
 				'A', Items.bread, 'B', cheeseSlice);
 
-		GameRegistry.addRecipe(new ItemStack(cheeseSandwich, 1), "A", "B", "A",
+		GameRegistry.addRecipe(new ItemStack(cheeseSandwich, 2), "A", "B", "A",
 				'A', Items.bread, 'B', smokedCheeseSlice);
 
 		GameRegistry.addRecipe(new ItemStack(cheeseLamp, 1), "A", "B", 'A',
