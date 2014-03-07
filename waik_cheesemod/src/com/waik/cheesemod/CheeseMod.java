@@ -20,7 +20,7 @@ import com.waik.cheesemod.items.Toast;
 import com.waik.cheesemod.tools.CheeseAxe;
 import com.waik.cheesemod.tools.CheeseHoe;
 import com.waik.cheesemod.tools.CheesePickaxe;
-import com.waik.cheesemod.tools.CheeseShovel;
+import com.waik.cheesemod.tools.CheeseSpade;
 import com.waik.cheesemod.tools.CheeseSword;
 
 import cpw.mods.fml.common.Mod;
@@ -41,26 +41,26 @@ public class CheeseMod
 	{
 		public Item getTabIconItem()
 		{
-			return cheeseSlice;
+			return cheese_slice;
 		}
 	};
 	
 	// Blocks
-	public final static Block cheeseLamp = new CheeseLamp().setBlockName("cheeseLamp")
+	public final static Block cheese_lamp = new CheeseLamp().setBlockName("cheeseLamp")
 			.setCreativeTab(tabCheese);
 	
-	public final static Block cheeseBlock = new CheeseBlock().setBlockName("cheeseBlock")
+	public final static Block cheese_block = new CheeseBlock().setBlockName("cheeseBlock")
 			.setCreativeTab(tabCheese);
 	
 	// Items
-	public static Item cheesePowder = new CheesePowder().setCreativeTab(tabCheese);
+	public static Item cheese_powder = new CheesePowder().setCreativeTab(tabCheese);
 	
 	// Food
-	public static Item cheeseSlice = new CheeseSlice().setCreativeTab(tabCheese);
+	public static Item cheese_slice = new CheeseSlice().setCreativeTab(tabCheese);
 	
-	public static Item smokedCheeseSlice = new SmokedCheeseSlice().setCreativeTab(tabCheese);
+	public static Item smoked_cheese_slice = new SmokedCheeseSlice().setCreativeTab(tabCheese);
 	
-	public static Item cheeseSandwich = new CheeseSandwich().setCreativeTab(tabCheese);
+	public static Item cheese_sandwich = new CheeseSandwich().setCreativeTab(tabCheese);
 	
 	public static Item toast = new Toast().setCreativeTab(tabCheese);
 	
@@ -68,60 +68,58 @@ public class CheeseMod
 	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 2, 30, 5.0f, 2.5f, 10);
 	
 	// Tools
-	public final static Item cheesePickaxe = new CheesePickaxe(cheese).setCreativeTab(tabCheese);
-	public final static Item cheeseSword = new CheeseSword(cheese).setCreativeTab(tabCheese);
-	public final static Item cheeseHoe = new CheeseHoe(cheese).setCreativeTab(tabCheese);
-	public final static Item cheeseAxe = new CheeseAxe(cheese).setCreativeTab(tabCheese);
-	public final static Item cheeseSpade = new CheeseShovel(cheese).setCreativeTab(tabCheese);
+	public final static Item cheese_pickaxe = new CheesePickaxe(cheese).setCreativeTab(tabCheese);
+	public final static Item cheese_sword = new CheeseSword(cheese).setCreativeTab(tabCheese);
+	public final static Item cheese_hoe = new CheeseHoe(cheese).setCreativeTab(tabCheese);
+	public final static Item cheese_axe = new CheeseAxe(cheese).setCreativeTab(tabCheese);
+	public final static Item cheese_spade = new CheeseSpade(cheese).setCreativeTab(tabCheese);
 	
 	// Pre-initialization
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		
 		// Registering items and blocks
-		GameRegistry.registerBlock(cheeseBlock, "cheeseBlock");
-		GameRegistry.registerItem(cheeseSlice, "cheeseSlice");
-		GameRegistry.registerItem(smokedCheeseSlice, "smokedCheeseSlice");
-		GameRegistry.registerBlock(cheeseLamp, "cheeseLamp");
-		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
+		GameRegistry.registerBlock(cheese_block, "cheese_block");
+		GameRegistry.registerItem(cheese_slice, "cheese_slice");
+		GameRegistry.registerItem(smoked_cheese_slice, "smoked_cheese_slice");
+		GameRegistry.registerBlock(cheese_lamp, "cheese_lamp");
+		GameRegistry.registerItem(cheese_sandwich, "cheese_sandwich");
 		GameRegistry.registerItem(toast, "toast");
-		GameRegistry.registerItem(cheesePowder, "cheesePowder");
+		GameRegistry.registerItem(cheese_powder, "cheese_powder");
 		
-		GameRegistry.registerItem(cheesePickaxe, "cheesePickaxe");
-		GameRegistry.registerItem(cheeseSword, "cheeseSword");
-		GameRegistry.registerItem(cheeseHoe, "cheeseHoe");
-		GameRegistry.registerItem(cheeseAxe, "cheeseAxe");
-		GameRegistry.registerItem(cheeseSpade, "cheeseSpade");
-		
-		// Shapeless recipes
-		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3), Items.milk_bucket,
-				Items.milk_bucket, Items.milk_bucket);
-		GameRegistry.addShapelessRecipe(new ItemStack(cheesePowder, 9), cheeseBlock);
-		
-		// Shaped recipes
-		GameRegistry.addRecipe(new ItemStack(cheeseSlice, 6), "AAA", 'A', cheeseBlock);
-		
-		GameRegistry.addRecipe(new ItemStack(cheeseSandwich, 2), "A", "B", "A", 'A', Items.bread,
-				'B', cheeseSlice);
-		
-		GameRegistry.addRecipe(new ItemStack(cheeseSandwich, 2), "A", "B", "A", 'A', Items.bread,
-				'B', smokedCheeseSlice);
-		
-		GameRegistry.addRecipe(new ItemStack(cheeseLamp, 1), "A", "B", 'A', cheeseBlock, 'B',
-				Blocks.torch);
-		
-		// Smeltings
-		GameRegistry.addSmelting(new ItemStack(cheeseSlice), new ItemStack(smokedCheeseSlice),
-				0.25f);
-		GameRegistry.addSmelting(new ItemStack(cheeseSandwich), new ItemStack(toast), 0.35f);
-		
+		GameRegistry.registerItem(cheese_pickaxe, "cheese_pickaxe");
+		GameRegistry.registerItem(cheese_sword, "cheese_sword");
+		GameRegistry.registerItem(cheese_hoe, "cheese_hoe");
+		GameRegistry.registerItem(cheese_axe, "cheese_axe");
+		GameRegistry.registerItem(cheese_spade, "cheese_spade");
 	}
 	
 	// Initialization
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
+		// Shapeless recipes
+		GameRegistry.addShapelessRecipe(new ItemStack(cheese_block, 3), Items.milk_bucket,
+				Items.milk_bucket, Items.milk_bucket);
+		GameRegistry.addShapelessRecipe(new ItemStack(cheese_powder, 9), cheese_block);
+		
+		// Shaped recipes
+		GameRegistry.addRecipe(new ItemStack(cheese_slice, 6), "AAA", 'A', cheese_block);
+		
+		GameRegistry.addRecipe(new ItemStack(cheese_sandwich, 2), "A", "B", "A", 'A', Items.bread,
+				'B', cheese_slice);
+		
+		GameRegistry.addRecipe(new ItemStack(cheese_sandwich, 2), "A", "B", "A", 'A', Items.bread,
+				'B', smoked_cheese_slice);
+		
+		GameRegistry.addRecipe(new ItemStack(cheese_lamp, 1), "A", "B", 'A', cheese_block, 'B',
+				Blocks.torch);
+		
+		// Smelting recipes
+		GameRegistry.addSmelting(new ItemStack(cheese_slice), new ItemStack(smoked_cheese_slice),
+				0.25f);
+		GameRegistry.addSmelting(new ItemStack(cheese_sandwich), new ItemStack(toast), 0.35f);
+		
 		MinecraftForge.EVENT_BUS.register(new CheeseBlock());
 	}
 }

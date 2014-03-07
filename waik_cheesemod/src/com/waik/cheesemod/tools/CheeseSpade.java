@@ -2,10 +2,10 @@ package com.waik.cheesemod.tools;
 
 import net.minecraft.item.ItemSpade;
 
-public class CheeseShovel extends ItemSpade
+public class CheeseSpade extends ItemSpade
 {
 	
-	public CheeseShovel(ToolMaterial cheese)
+	public CheeseSpade(ToolMaterial cheese)
 	{
 		super(cheese);
 		this.setUnlocalizedName("cheeseSpade");
