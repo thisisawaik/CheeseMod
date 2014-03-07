@@ -1,4 +1,4 @@
-package com.waik.cheesemod;
+package com.waik.cheesemod.items;
 
 import net.minecraft.item.Item;
 

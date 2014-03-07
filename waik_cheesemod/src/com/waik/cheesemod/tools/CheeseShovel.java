@@ -1,10 +1,10 @@
-package com.waik.cheesemod;
+package com.waik.cheesemod.tools;
 
 import net.minecraft.item.ItemSpade;
 
-public class CheeseSpade extends ItemSpade {
+public class CheeseShovel extends ItemSpade {
 
-	public CheeseSpade(ToolMaterial cheese) {
+	public CheeseShovel(ToolMaterial cheese) {
 		super(cheese);
 		this.setUnlocalizedName("cheeseSpade");
 		this.setTextureName("cheesemod:cheese_spade");

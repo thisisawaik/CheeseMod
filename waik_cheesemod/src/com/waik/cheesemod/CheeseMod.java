@@ -1,5 +1,17 @@
 package com.waik.cheesemod;
 
+import com.waik.cheesemod.blocks.CheeseBlock;
+import com.waik.cheesemod.blocks.CheeseLamp;
+import com.waik.cheesemod.items.CheesePowder;
+import com.waik.cheesemod.items.CheeseSandwich;
+import com.waik.cheesemod.items.CheeseSlice;
+import com.waik.cheesemod.items.Toast;
+import com.waik.cheesemod.tools.CheeseAxe;
+import com.waik.cheesemod.tools.CheeseHoe;
+import com.waik.cheesemod.tools.CheesePickaxe;
+import com.waik.cheesemod.tools.CheeseShovel;
+import com.waik.cheesemod.tools.CheeseSword;
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -61,7 +73,7 @@ public class CheeseMod {
 			.setCreativeTab(tabCheese);
 	public final static Item cheeseAxe = new CheeseAxe(cheese)
 			.setCreativeTab(tabCheese);
-	public final static Item cheeseSpade = new CheeseSpade(cheese)
+	public final static Item cheeseSpade = new CheeseShovel(cheese)
 			.setCreativeTab(tabCheese);
 
 	// Pre-initialization

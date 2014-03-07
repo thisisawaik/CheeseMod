@@ -1,4 +1,4 @@
-package com.waik.cheesemod;
+package com.waik.cheesemod.tools;
 
 import net.minecraft.item.ItemPickaxe;
 
