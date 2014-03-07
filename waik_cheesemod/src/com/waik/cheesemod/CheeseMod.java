@@ -5,8 +5,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -46,6 +48,22 @@ public class CheeseMod {
 
 	public static Item toast = new Toast().setCreativeTab(tabCheese);
 
+	// Tool materials
+	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 2,
+			30, 5.0f, 2.5f, 10);
+
+	// Tools
+	public final static Item cheesePickaxe = new CheesePickaxe(cheese)
+			.setCreativeTab(tabCheese);
+	public final static Item cheeseSword = new CheeseSword(cheese)
+			.setCreativeTab(tabCheese);
+	public final static Item cheeseHoe = new CheeseHoe(cheese)
+			.setCreativeTab(tabCheese);
+	public final static Item cheeseAxe = new CheeseAxe(cheese)
+			.setCreativeTab(tabCheese);
+	public final static Item cheeseSpade = new CheeseSpade(cheese)
+			.setCreativeTab(tabCheese);
+
 	// Pre-initialization
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -57,6 +75,12 @@ public class CheeseMod {
 		GameRegistry.registerItem(cheeseSandwich, "cheeseSandwich");
 		GameRegistry.registerItem(toast, "toast");
 		GameRegistry.registerItem(cheesePowder, "cheesePowder");
+
+		GameRegistry.registerItem(cheesePickaxe, "cheesePickaxe");
+		GameRegistry.registerItem(cheeseSword, "cheeseSword");
+		GameRegistry.registerItem(cheeseHoe, "cheeseHoe");
+		GameRegistry.registerItem(cheeseAxe, "cheeseAxe");
+		GameRegistry.registerItem(cheeseSpade, "cheeseSpade");
 
 		// Shapeless recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(cheeseBlock, 3),
