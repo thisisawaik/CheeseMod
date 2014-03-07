@@ -1,7 +1,6 @@
 package com.waik.cheesemod;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -28,15 +27,15 @@ public class CheeseMod {
 	};
 
 	// Items
-	public static Item cheeseSlice = new CheeseSlice(2, true)
+	public static Item cheeseSlice = new CheeseSlice()
 			.setCreativeTab(tabCheese);
 
-	public static Item cheeseSandwich = new CheeseSandwich(5, true)
+	public static Item cheeseSandwich = new CheeseSandwich()
 			.setCreativeTab(tabCheese);
 
 	// Blocks
-	public final static Block cheeseLamp = new CheeseLamp(Material.rock)
-			.setBlockName("cheeseLamp").setCreativeTab(tabCheese);
+	public final static Block cheeseLamp = new CheeseLamp().setBlockName(
+			"cheeseLamp").setCreativeTab(tabCheese);
 
 	public final static Block cheeseBlock = new CheeseBlock().setBlockName(
 			"cheeseBlock").setCreativeTab(tabCheese);

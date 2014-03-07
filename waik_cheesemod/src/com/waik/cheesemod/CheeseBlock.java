@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 
 public class CheeseBlock extends Block {
 
-	protected CheeseBlock() {
+	public CheeseBlock() {
 		super(Material.cake);
 	}
 

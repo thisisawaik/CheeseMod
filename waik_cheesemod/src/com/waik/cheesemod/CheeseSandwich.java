@@ -3,8 +3,10 @@ package com.waik.cheesemod;
 import net.minecraft.item.ItemFood;
 
 public class CheeseSandwich extends ItemFood {
-	public CheeseSandwich(int j, boolean b) {
-		super(j, b);
+	static int foodPoints = 5;
+
+	public CheeseSandwich() {
+		super(foodPoints, true);
 		this.setUnlocalizedName("cheeseSandwich");
 		this.setTextureName("cheesemod:cheese_sandwich");
 	}

@@ -6,8 +6,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 
 public class CheeseLamp extends Block {
 
-	protected CheeseLamp(Material arg0) {
-		super(arg0);
+	public CheeseLamp() {
+		super(Material.rock);
 		this.setLightLevel(1f);
 	}
 
