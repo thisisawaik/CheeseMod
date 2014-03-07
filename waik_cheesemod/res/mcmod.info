@@ -1,0 +1,11 @@
+[
+{
+  "modid": "cheesemod",
+  "name": "Cheese Mod",
+  "description": "A mod that has to do stuff with cheese.",
+  "logoFile": "",
+  
+  "url": "https://github.com/thisisawaik/CheeseMod",
+  "authorList": ["Darkmacsek9", "Geiszla", "Isti115"]
+}
+]

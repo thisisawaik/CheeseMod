@@ -33,7 +33,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class CheeseMod {
 	// Mod Properties
 	public static final String MODID = "cheesemod";
-	public static final String VERSION = "0.0.1";
+	public static final String VERSION = "0.1.0";
 
 	// Creative Tabs
 	public static CreativeTabs tabCheese = new CreativeTabs("CheeseModTab") {
