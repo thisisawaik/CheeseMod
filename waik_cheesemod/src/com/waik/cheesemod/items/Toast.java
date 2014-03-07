@@ -5,6 +5,7 @@ import net.minecraft.item.ItemFood;
 public class Toast extends ItemFood
 {
 	static int foodPoints = 7;
+	static float saturation = 6.2f;
 	
 	public Toast()
 	{
