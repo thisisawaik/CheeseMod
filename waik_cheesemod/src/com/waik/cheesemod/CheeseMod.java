@@ -28,6 +28,7 @@ import com.waik.cheesemod.tools.CheeseHoe;
 import com.waik.cheesemod.tools.CheesePickaxe;
 import com.waik.cheesemod.tools.CheeseSpade;
 import com.waik.cheesemod.tools.CheeseSword;
+import com.waik.cheesemod.tools.CheeseToolsCrafting;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -141,6 +142,8 @@ public class CheeseMod
 				Blocks.torch);
 		
 		(new CheeseArmorCrafting()).addRecipes();
+		
+		(new CheeseToolsCrafting()).addRecipes();
 		
 		// Smelting recipes
 		GameRegistry.addSmelting(new ItemStack(cheese_slice), new ItemStack(smoked_cheese_slice),
