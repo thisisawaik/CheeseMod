@@ -1,9 +1,11 @@
 package com.waik.cheesemod.items;
 
-public class SmokedCheeseSlice extends CheeseSlice {
+public class SmokedCheeseSlice extends CheeseSlice
+{
 	static int foodPoints = 3;
-
-	public SmokedCheeseSlice() {
+	
+	public SmokedCheeseSlice()
+	{
 		super(foodPoints);
 		this.setUnlocalizedName("smokedCheeseSlice");
 		this.setTextureName("cheesemod:smoked_cheese_slice");
