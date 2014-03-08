@@ -34,6 +34,7 @@ import com.waik.cheesemod.tools.CheeseToolsCrafting;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -53,6 +54,10 @@ public class CheeseMod
 			return cheese_slice;
 		}
 	};
+	
+	@Instance(MODID)
+	public static CheeseMod instance;
+	public static final int guiIdCustomGuiBlock = 0;
 	
 	// Blocks
 	public final static Block cheese_lamp = new CheeseLamp();
@@ -123,6 +128,8 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_sandwich, "cheese_sandwich");
 		GameRegistry.registerItem(toast, "toast");
 		GameRegistry.registerItem(cheese_powder, "cheese_powder");
+		
+		// Registering potion
 		GameRegistry.registerItem(cheese_juice, "cheese_juice");
 	}
 	
