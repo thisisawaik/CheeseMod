@@ -19,6 +19,7 @@ import com.waik.cheesemod.armor.CheeseLeggings;
 import com.waik.cheesemod.blocks.CheeseBlock;
 import com.waik.cheesemod.blocks.CheeseLamp;
 import com.waik.cheesemod.blocks.CustomGuiBlock;
+import com.waik.cheesemod.gui.GuiHandler;
 import com.waik.cheesemod.items.CheeseJuice;
 import com.waik.cheesemod.items.CheesePowder;
 import com.waik.cheesemod.items.CheeseSandwich;
@@ -37,6 +38,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
@@ -46,7 +48,7 @@ public class CheeseMod
 	public static final String MODID = "cheesemod";
 	public static final String VERSION = "0.1.0";
 	
-	// Creative pabs
+	// Creative tabs
 	public static CreativeTabs tabCheese = new CreativeTabs("CheeseModTab")
 	{
 		public Item getTabIconItem()
@@ -137,6 +139,8 @@ public class CheeseMod
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+		
 		// Shapeless recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(cheese_block, 3), Items.milk_bucket,
 				Items.milk_bucket, Items.milk_bucket);

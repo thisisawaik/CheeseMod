@@ -20,3 +20,5 @@ item.cheeseHelmet.name=Cheese Helmet
 item.cheeseChestplate.name=Cheese Chestplate
 item.cheeseLeggings.name=Cheese Leggings
 item.cheeseBoots.name=Cheese Boots
+
+container.customGuiBlock=Custom Gui
