@@ -8,7 +8,7 @@ public class CheeseJuice extends ItemFood
 {
 	public CheeseJuice()
 	{
-		super(1, 1F, false);
+		super(1, 0.1F, false);
 		this.setUnlocalizedName("cheeseJuice");
 		this.setTextureName("cheesemod:cheese_juice");
 		this.setPotionEffect(1, 20, 2, 1F);
