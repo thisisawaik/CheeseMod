@@ -18,6 +18,8 @@ import com.waik.cheesemod.armor.CheeseHelmet;
 import com.waik.cheesemod.armor.CheeseLeggings;
 import com.waik.cheesemod.blocks.CheeseBlock;
 import com.waik.cheesemod.blocks.CheeseLamp;
+import com.waik.cheesemod.blocks.CustomGuiBlock;
+import com.waik.cheesemod.items.CheeseJuice;
 import com.waik.cheesemod.items.CheesePowder;
 import com.waik.cheesemod.items.CheeseSandwich;
 import com.waik.cheesemod.items.CheeseSlice;
@@ -39,11 +41,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
 public class CheeseMod
 {
-	// Mod Properties
+	// Mod properties
 	public static final String MODID = "cheesemod";
 	public static final String VERSION = "0.1.0";
 	
-	// Creative Tabs
+	// Creative pabs
 	public static CreativeTabs tabCheese = new CreativeTabs("CheeseModTab")
 	{
 		public Item getTabIconItem()
@@ -53,14 +55,15 @@ public class CheeseMod
 	};
 	
 	// Blocks
-	public final static Block cheese_lamp = new CheeseLamp().setBlockName("cheeseLamp")
-			.setCreativeTab(tabCheese);
+	public final static Block cheese_lamp = new CheeseLamp().setCreativeTab(tabCheese);
 	
-	public final static Block cheese_block = new CheeseBlock().setBlockName("cheeseBlock")
-			.setCreativeTab(tabCheese);
+	public final static Block cheese_block = new CheeseBlock().setCreativeTab(tabCheese);
+	public final static Block customGuiIdle = new CustomGuiBlock(false).setCreativeTab(tabCheese);
+	public final static Block customGuiActive = new CustomGuiBlock(true).setCreativeTab(tabCheese);
 	
 	// Items
 	public static Item cheese_powder = new CheesePowder().setCreativeTab(tabCheese);
+	public static Item cheese_juice = new CheeseJuice().setCreativeTab(tabCheese);
 	
 	// Food
 	public static Item cheese_slice = new CheeseSlice().setCreativeTab(tabCheese);
@@ -100,12 +103,16 @@ public class CheeseMod
 	{
 		// Registering items and blocks
 		GameRegistry.registerBlock(cheese_block, "cheese_block");
+		GameRegistry.registerBlock(cheese_lamp, "cheese_lamp");
+		GameRegistry.registerBlock(customGuiIdle, "customGuiIdle");
+		GameRegistry.registerBlock(customGuiActive, "customGuiActive");
+		
 		GameRegistry.registerItem(cheese_slice, "cheese_slice");
 		GameRegistry.registerItem(smoked_cheese_slice, "smoked_cheese_slice");
-		GameRegistry.registerBlock(cheese_lamp, "cheese_lamp");
 		GameRegistry.registerItem(cheese_sandwich, "cheese_sandwich");
 		GameRegistry.registerItem(toast, "toast");
 		GameRegistry.registerItem(cheese_powder, "cheese_powder");
+		GameRegistry.registerItem(cheese_juice, "cheese_juice");
 		
 		GameRegistry.registerItem(cheese_pickaxe, "cheese_pickaxe");
 		GameRegistry.registerItem(cheese_sword, "cheese_sword");

@@ -11,6 +11,7 @@ public class CheeseLamp extends Block
 	{
 		super(Material.rock);
 		this.setLightLevel(1f);
+		this.setBlockName("cheeseBlock");
 	}
 	
 	public void registerBlockIcons(IIconRegister reg)

@@ -13,6 +13,7 @@ public class CheeseBlock extends Block
 	public CheeseBlock()
 	{
 		super(Material.cake);
+		this.setBlockName("cheeseBlock");
 	}
 	
 	@Override
