@@ -18,6 +18,7 @@ import com.waik.cheesemod.armor.CheeseHelmet;
 import com.waik.cheesemod.armor.CheeseLeggings;
 import com.waik.cheesemod.blocks.CheeseBlock;
 import com.waik.cheesemod.blocks.CheeseLamp;
+import com.waik.cheesemod.items.CheeseJuice;
 import com.waik.cheesemod.items.CheesePowder;
 import com.waik.cheesemod.items.CheeseSandwich;
 import com.waik.cheesemod.items.CheeseSlice;
@@ -61,6 +62,7 @@ public class CheeseMod
 	
 	// Items
 	public static Item cheese_powder = new CheesePowder().setCreativeTab(tabCheese);
+	public static Item cheese_juice = new CheeseJuice().setCreativeTab(tabCheese);
 	
 	// Food
 	public static Item cheese_slice = new CheeseSlice().setCreativeTab(tabCheese);
@@ -106,6 +108,7 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_sandwich, "cheese_sandwich");
 		GameRegistry.registerItem(toast, "toast");
 		GameRegistry.registerItem(cheese_powder, "cheese_powder");
+		GameRegistry.registerItem(cheese_juice, "cheese_juice");
 		
 		GameRegistry.registerItem(cheese_pickaxe, "cheese_pickaxe");
 		GameRegistry.registerItem(cheese_sword, "cheese_sword");
