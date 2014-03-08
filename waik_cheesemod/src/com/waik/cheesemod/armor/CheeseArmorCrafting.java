@@ -15,6 +15,7 @@ public class CheeseArmorCrafting
 	{ "A A", "AAA", "AAA" },
 	{ "AAA", "A A", "A A" },
 	{ "A A", "A A" } };
+	
 	private Object[] recipeItems;
 	
 	public CheeseArmorCrafting()
@@ -33,6 +34,5 @@ public class CheeseArmorCrafting
 			GameRegistry.addRecipe(new ItemStack(item), new Object[]
 			{ this.recipePatterns[i], 'A', CheeseMod.cheese_block });
 		}
-		
 	}
 }

@@ -1,5 +1,8 @@
 package com.waik.cheesemod.items;
 
+import java.util.List;
+
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -8,7 +11,8 @@ public class CheeseJuice extends ItemFood
 {
 	public CheeseJuice()
 	{
-		super(1, 0.1F, false);
+		super(0, 0.0F, false);
+		this.setAlwaysEdible();
 		this.setUnlocalizedName("cheeseJuice");
 		this.setTextureName("cheesemod:cheese_juice");
 		this.setPotionEffect(1, 20, 2, 1F);
@@ -20,4 +24,8 @@ public class CheeseJuice extends ItemFood
 		return EnumAction.drink;
 	}
 	
+	public void addInformation(ItemStack item, EntityPlayer player, List list, boolean par4)
+	{
+		list.add("The Cheese Effect!");
+	}
 }

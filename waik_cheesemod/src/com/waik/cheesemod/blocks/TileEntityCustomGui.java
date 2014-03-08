@@ -10,5 +10,4 @@ public class TileEntityCustomGui extends TileEntity
 	{
 		this.localizedName = displayName;
 	}
-	
 }

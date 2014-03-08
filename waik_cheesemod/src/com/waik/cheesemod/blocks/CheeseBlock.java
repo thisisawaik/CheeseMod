@@ -7,13 +7,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
+import com.waik.cheesemod.CheeseMod;
+
 public class CheeseBlock extends Block
 {
-	
 	public CheeseBlock()
 	{
 		super(Material.cake);
 		this.setBlockName("cheeseBlock");
+		this.setCreativeTab(CheeseMod.tabCheese);
 	}
 	
 	@Override
@@ -32,5 +34,4 @@ public class CheeseBlock extends Block
 		
 		return true;
 	}
-	
 }

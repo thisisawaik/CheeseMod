@@ -2,6 +2,8 @@ package com.waik.cheesemod.items;
 
 import net.minecraft.item.ItemFood;
 
+import com.waik.cheesemod.CheeseMod;
+
 public class CheeseSlice extends ItemFood
 {
 	static int foodPoints = 2;
@@ -12,6 +14,7 @@ public class CheeseSlice extends ItemFood
 		super(foodPoints, saturation, false);
 		this.setUnlocalizedName("cheeseSlice");
 		this.setTextureName("cheesemod:cheese_slice");
+		this.setCreativeTab(CheeseMod.tabCheese);
 	}
 	
 	public CheeseSlice(int foodPoints, float saturation)

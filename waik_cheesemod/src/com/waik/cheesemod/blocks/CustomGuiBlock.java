@@ -42,6 +42,7 @@ public class CustomGuiBlock extends BlockContainer
 		}
 		
 		this.setHardness(3.5f);
+		this.setCreativeTab(CheeseMod.tabCheese);
 	}
 	
 	public void registerIcons(IIconRegister reg)

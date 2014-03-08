@@ -55,21 +55,21 @@ public class CheeseMod
 	};
 	
 	// Blocks
-	public final static Block cheese_lamp = new CheeseLamp().setCreativeTab(tabCheese);
+	public final static Block cheese_lamp = new CheeseLamp();
 	
-	public final static Block cheese_block = new CheeseBlock().setCreativeTab(tabCheese);
-	public final static Block customGuiIdle = new CustomGuiBlock(false).setCreativeTab(tabCheese);
-	public final static Block customGuiActive = new CustomGuiBlock(true).setCreativeTab(tabCheese);
+	public final static Block cheese_block = new CheeseBlock();
+	public final static Block customGuiIdle = new CustomGuiBlock(false);
+	public final static Block customGuiActive = new CustomGuiBlock(true);
 	
 	// Items
-	public static Item cheese_powder = new CheesePowder().setCreativeTab(tabCheese);
-	public static Item cheese_juice = new CheeseJuice().setCreativeTab(tabCheese);
+	public static Item cheese_powder = new CheesePowder();
+	public static Item cheese_juice = new CheeseJuice();
 	
 	// Food
-	public static Item cheese_slice = new CheeseSlice().setCreativeTab(tabCheese);
-	public static Item smoked_cheese_slice = new SmokedCheeseSlice().setCreativeTab(tabCheese);
-	public static Item cheese_sandwich = new CheeseSandwich().setCreativeTab(tabCheese);
-	public static Item toast = new Toast().setCreativeTab(tabCheese);
+	public static Item cheese_slice = new CheeseSlice();
+	public static Item smoked_cheese_slice = new SmokedCheeseSlice();
+	public static Item cheese_sandwich = new CheeseSandwich();
+	public static Item toast = new Toast();
 	
 	// Tool materials
 	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 3, 32, 2.0f, 0.0f, 40);
@@ -79,52 +79,51 @@ public class CheeseMod
 	{ 2, 3, 2, 1 }, 12);
 	
 	// Tools
-	public final static Item cheese_pickaxe = new CheesePickaxe(cheese).setCreativeTab(tabCheese);
-	public final static Item cheese_sword = new CheeseSword(cheese).setCreativeTab(tabCheese);
-	public final static Item cheese_hoe = new CheeseHoe(cheese).setCreativeTab(tabCheese);
-	public final static Item cheese_axe = new CheeseAxe(cheese).setCreativeTab(tabCheese);
-	public final static Item cheese_spade = new CheeseSpade(cheese).setCreativeTab(tabCheese);
+	public final static Item cheese_pickaxe = new CheesePickaxe(cheese);
+	public final static Item cheese_sword = new CheeseSword(cheese);
+	public final static Item cheese_hoe = new CheeseHoe(cheese);
+	public final static Item cheese_axe = new CheeseAxe(cheese);
+	public final static Item cheese_spade = new CheeseSpade(cheese);
 	
 	// Armor
-	public final static Item cheese_helmet = new CheeseHelmet(cheeseArmor)
-			.setCreativeTab(tabCheese);
+	public final static Item cheese_helmet = new CheeseHelmet(cheeseArmor);
 	
-	public final static Item cheese_chestplate = new CheeseChestplate(cheeseArmor)
-			.setCreativeTab(tabCheese);
+	public final static Item cheese_chestplate = new CheeseChestplate(cheeseArmor);
 	
-	public final static Item cheese_leggings = new CheeseLeggings(cheeseArmor)
-			.setCreativeTab(tabCheese);
+	public final static Item cheese_leggings = new CheeseLeggings(cheeseArmor);
 	
-	public final static Item cheese_boots = new CheeseBoots(cheeseArmor).setCreativeTab(tabCheese);
+	public final static Item cheese_boots = new CheeseBoots(cheeseArmor);
 	
 	// Pre-initialization
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		// Registering items and blocks
+		// Registering blocks
 		GameRegistry.registerBlock(cheese_block, "cheese_block");
 		GameRegistry.registerBlock(cheese_lamp, "cheese_lamp");
 		GameRegistry.registerBlock(customGuiIdle, "customGuiIdle");
 		GameRegistry.registerBlock(customGuiActive, "customGuiActive");
 		
-		GameRegistry.registerItem(cheese_slice, "cheese_slice");
-		GameRegistry.registerItem(smoked_cheese_slice, "smoked_cheese_slice");
-		GameRegistry.registerItem(cheese_sandwich, "cheese_sandwich");
-		GameRegistry.registerItem(toast, "toast");
-		GameRegistry.registerItem(cheese_powder, "cheese_powder");
-		GameRegistry.registerItem(cheese_juice, "cheese_juice");
-		
+		// Registering tools
 		GameRegistry.registerItem(cheese_pickaxe, "cheese_pickaxe");
 		GameRegistry.registerItem(cheese_sword, "cheese_sword");
 		GameRegistry.registerItem(cheese_hoe, "cheese_hoe");
 		GameRegistry.registerItem(cheese_axe, "cheese_axe");
 		GameRegistry.registerItem(cheese_spade, "cheese_spade");
 		
+		// Registering armor
 		GameRegistry.registerItem(cheese_helmet, "cheese_helmet");
 		GameRegistry.registerItem(cheese_chestplate, "cheese_chestplate");
 		GameRegistry.registerItem(cheese_leggings, "cheese_leggings");
 		GameRegistry.registerItem(cheese_boots, "cheese_boots");
 		
+		// Registering food
+		GameRegistry.registerItem(cheese_slice, "cheese_slice");
+		GameRegistry.registerItem(smoked_cheese_slice, "smoked_cheese_slice");
+		GameRegistry.registerItem(cheese_sandwich, "cheese_sandwich");
+		GameRegistry.registerItem(toast, "toast");
+		GameRegistry.registerItem(cheese_powder, "cheese_powder");
+		GameRegistry.registerItem(cheese_juice, "cheese_juice");
 	}
 	
 	// Initialization
