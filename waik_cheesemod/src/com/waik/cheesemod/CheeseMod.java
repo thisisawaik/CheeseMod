@@ -148,6 +148,9 @@ public class CheeseMod
 		GameRegistry.addRecipe(new ItemStack(cheese_lamp, 1), "A", "B", 'A', cheese_block, 'B',
 				Blocks.torch);
 		
+		GameRegistry.addRecipe(new ItemStack(cheese_juice, 1), "A", "A", "B", 'A', cheese_powder,
+				'B', Items.potionitem);
+		
 		(new CheeseArmorCrafting()).addRecipes();
 		
 		(new CheeseToolsCrafting()).addRecipes();
