@@ -1,3 +1,4 @@
+/*
 package com.waik.cheesemod.gui;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -52,3 +53,4 @@ public class GuiHandler implements IGuiHandler
 		return null;
 	}
 }
+ */

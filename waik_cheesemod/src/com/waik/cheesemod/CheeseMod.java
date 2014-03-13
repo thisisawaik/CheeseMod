@@ -19,13 +19,15 @@ import com.waik.cheesemod.armor.CheeseLeggings;
 import com.waik.cheesemod.blocks.CheeseBlock;
 import com.waik.cheesemod.blocks.CheeseLamp;
 import com.waik.cheesemod.blocks.CustomGuiBlock;
-import com.waik.cheesemod.gui.GuiHandler;
+//import com.waik.cheesemod.gui.GuiHandler;
 import com.waik.cheesemod.items.CheeseJuice;
 import com.waik.cheesemod.items.CheesePowder;
 import com.waik.cheesemod.items.CheeseSandwich;
 import com.waik.cheesemod.items.CheeseSlice;
 import com.waik.cheesemod.items.SmokedCheeseSlice;
 import com.waik.cheesemod.items.Toast;
+import com.waik.cheesemod.lib.ProxyCommon;
+import com.waik.cheesemod.lib.References;
 import com.waik.cheesemod.tools.CheeseAxe;
 import com.waik.cheesemod.tools.CheeseHoe;
 import com.waik.cheesemod.tools.CheesePickaxe;
@@ -36,17 +38,16 @@ import com.waik.cheesemod.tools.CheeseToolsCrafting;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = CheeseMod.MODID, version = CheeseMod.VERSION)
+@Mod(modid = References.MODID, version = References.VERSION)
 public class CheeseMod
 {
-	// Mod properties
-	public static final String MODID = "cheesemod";
-	public static final String VERSION = "0.1.0";
+	@SidedProxy(clientSide = References.Client, serverSide = References.Common)
+	public static ProxyCommon proxy;
 	
 	// Creative tabs
 	public static CreativeTabs tabCheese = new CreativeTabs("CheeseModTab")
@@ -57,7 +58,7 @@ public class CheeseMod
 		}
 	};
 	
-	@Instance(MODID)
+	@Instance(value = References.MODID)
 	public static CheeseMod instance;
 	public static final int guiIdCustomGuiBlock = 0;
 	
@@ -139,7 +140,9 @@ public class CheeseMod
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+		proxy.registerRenderInformation();
+		
+		// NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 		
 		// Shapeless recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(cheese_block, 3), Items.milk_bucket,

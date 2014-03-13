@@ -1,3 +1,4 @@
+/*
 package com.waik.cheesemod.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -41,3 +42,4 @@ public class GuiCustomGuiBlock extends GuiContainer
 	{
 	}
 }
+ */
