@@ -16,9 +16,9 @@ item.cheesePickaxe.name=Cheese Pickaxe
 item.cheeseSpade.name=Cheese Spade
 item.cheeseSword.name=Cheese Sword
 
-item.cheeseHelmet.name=Cheese Helmet
-item.cheeseChestplate.name=Cheese Chestplate
-item.cheeseLeggings.name=Cheese Leggings
-item.cheeseBoots.name=Cheese Boots
+cheese_helmet.name=Cheese Helmet
+cheese_chestplate.name=Cheese Chestplate
+cheese_leggings.name=Cheese Leggings
+cheese_boots.name=Cheese Boots
 
 container.customGuiBlock=Custom Gui

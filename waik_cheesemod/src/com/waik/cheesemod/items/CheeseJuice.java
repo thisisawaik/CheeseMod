@@ -7,6 +7,8 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
+import com.waik.cheesemod.CheeseMod;
+
 public class CheeseJuice extends ItemFood
 {
 	public CheeseJuice()
@@ -16,6 +18,7 @@ public class CheeseJuice extends ItemFood
 		this.setUnlocalizedName("cheeseJuice");
 		this.setTextureName("cheesemod:cheese_juice");
 		this.setPotionEffect(1, 20, 2, 1F);
+		this.setCreativeTab(CheeseMod.tabCheese);
 	}
 	
 	@Override

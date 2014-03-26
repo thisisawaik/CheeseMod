@@ -1,5 +1,8 @@
 package com.waik.cheesemod;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -11,11 +14,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 
+import com.waik.cheesemod.armor.CheeseArmor;
 import com.waik.cheesemod.armor.CheeseArmorCrafting;
-import com.waik.cheesemod.armor.CheeseBoots;
-import com.waik.cheesemod.armor.CheeseChestplate;
-import com.waik.cheesemod.armor.CheeseHelmet;
-import com.waik.cheesemod.armor.CheeseLeggings;
 import com.waik.cheesemod.blocks.CheeseBlock;
 import com.waik.cheesemod.blocks.CheeseLamp;
 import com.waik.cheesemod.blocks.CustomGuiBlock;
@@ -85,6 +85,8 @@ public class CheeseMod
 	// Armor materials
 	public static ArmorMaterial cheeseArmor = EnumHelper.addArmorMaterial("Cheese2", 3, new int[]
 	{ 2, 3, 2, 1 }, 12);
+	public static final Map<Integer, String> armorType = new HashMap<Integer, String>();
+	public static int armorRender;
 	
 	// Tools
 	public final static Item cheese_pickaxe = new CheesePickaxe(cheese);
@@ -94,18 +96,25 @@ public class CheeseMod
 	public final static Item cheese_spade = new CheeseSpade(cheese);
 	
 	// Armor
-	public final static Item cheese_helmet = new CheeseHelmet(cheeseArmor);
-	
-	public final static Item cheese_chestplate = new CheeseChestplate(cheeseArmor);
-	
-	public final static Item cheese_leggings = new CheeseLeggings(cheeseArmor);
-	
-	public final static Item cheese_boots = new CheeseBoots(cheeseArmor);
+	public static Item cheese_helmet;
+	public static Item cheese_chestplate;
+	public static Item cheese_leggings;
+	public static Item cheese_boots;
 	
 	// Pre-initialization
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		armorType.put(0, "helmet");
+		armorType.put(1, "chestplate");
+		armorType.put(2, "leggings");
+		armorType.put(3, "boots");
+		
+		cheese_helmet = new CheeseArmor(0);
+		cheese_chestplate = new CheeseArmor(1);
+		cheese_leggings = new CheeseArmor(2);
+		cheese_boots = new CheeseArmor(3);
+		
 		// Registering blocks
 		GameRegistry.registerBlock(cheese_block, "cheese_block");
 		GameRegistry.registerBlock(cheese_lamp, "cheese_lamp");
@@ -120,10 +129,10 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_spade, "cheese_spade");
 		
 		// Registering armor
-		GameRegistry.registerItem(cheese_helmet, "cheese_helmet");
-		GameRegistry.registerItem(cheese_chestplate, "cheese_chestplate");
-		GameRegistry.registerItem(cheese_leggings, "cheese_leggings");
-		GameRegistry.registerItem(cheese_boots, "cheese_boots");
+		// GameRegistry.registerItem(cheese_helmet, "cheese_helmet");
+		// GameRegistry.registerItem(cheese_chestplate, "cheese_chestplate");
+		// GameRegistry.registerItem(cheese_leggings, "cheese_leggings");
+		// GameRegistry.registerItem(cheese_boots, "cheese_boots");
 		
 		// Registering food
 		GameRegistry.registerItem(cheese_slice, "cheese_slice");
