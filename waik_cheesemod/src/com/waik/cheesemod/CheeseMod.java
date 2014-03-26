@@ -82,7 +82,7 @@ public class CheeseMod
 	// Tool materials
 	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 3, 32, 2.0f, 0.0f, 40);
 	
-	// Armor materials
+	// Armor materials and types
 	public static ArmorMaterial cheeseArmor = EnumHelper.addArmorMaterial("Cheese2", 3, new int[]
 	{ 2, 3, 2, 1 }, 12);
 	public static final Map<Integer, String> armorType = new HashMap<Integer, String>();
@@ -105,11 +105,13 @@ public class CheeseMod
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		// Pairing armor types
 		armorType.put(0, "helmet");
 		armorType.put(1, "chestplate");
 		armorType.put(2, "leggings");
 		armorType.put(3, "boots");
 		
+		// Creating Armor
 		cheese_helmet = new CheeseArmor(0);
 		cheese_chestplate = new CheeseArmor(1);
 		cheese_leggings = new CheeseArmor(2);
@@ -127,12 +129,6 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_hoe, "cheese_hoe");
 		GameRegistry.registerItem(cheese_axe, "cheese_axe");
 		GameRegistry.registerItem(cheese_spade, "cheese_spade");
-		
-		// Registering armor
-		// GameRegistry.registerItem(cheese_helmet, "cheese_helmet");
-		// GameRegistry.registerItem(cheese_chestplate, "cheese_chestplate");
-		// GameRegistry.registerItem(cheese_leggings, "cheese_leggings");
-		// GameRegistry.registerItem(cheese_boots, "cheese_boots");
 		
 		// Registering food
 		GameRegistry.registerItem(cheese_slice, "cheese_slice");

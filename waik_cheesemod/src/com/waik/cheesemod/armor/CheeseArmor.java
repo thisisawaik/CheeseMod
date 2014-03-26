@@ -19,7 +19,6 @@ public class CheeseArmor extends ItemArmor
 	public CheeseArmor(int type)
 	{
 		super(CheeseMod.cheeseArmor, CheeseMod.armorRender, type);
-		this.setHasSubtypes(true);
 		this.setCreativeTab(CheeseMod.tabCheese);
 		GameRegistry.registerItem(this, "cheese_" + CheeseMod.armorType.get(type));
 		
@@ -30,11 +29,11 @@ public class CheeseArmor extends ItemArmor
 	{
 		if (this.armorType == 2)
 		{
-			return "cheesemod:textures/models/armor/cheese_layer_2";
+			return "cheesemod:textures/models/armor/cheese_layer_2.png";
 		}
 		else
 		{
-			return "cheesemod:textures/models/armor/cheese_layer_1";
+			return "cheesemod:textures/models/armor/cheese_layer_1.png";
 		}
 	}
 	
