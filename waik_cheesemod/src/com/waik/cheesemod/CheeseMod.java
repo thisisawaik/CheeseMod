@@ -1,16 +1,21 @@
 package com.waik.cheesemod;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -19,11 +24,13 @@ import com.waik.cheesemod.armor.CheeseArmorCrafting;
 import com.waik.cheesemod.blocks.CheeseBlock;
 import com.waik.cheesemod.blocks.CheeseLamp;
 import com.waik.cheesemod.blocks.CustomGuiBlock;
+import com.waik.cheesemod.goat.EntityGoat;
 //import com.waik.cheesemod.gui.GuiHandler;
 import com.waik.cheesemod.items.CheeseJuice;
 import com.waik.cheesemod.items.CheesePowder;
 import com.waik.cheesemod.items.CheeseSandwich;
 import com.waik.cheesemod.items.CheeseSlice;
+import com.waik.cheesemod.items.GoatMilk;
 import com.waik.cheesemod.items.SmokedCheeseSlice;
 import com.waik.cheesemod.items.Toast;
 import com.waik.cheesemod.lib.ProxyCommon;
@@ -40,7 +47,9 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = References.MODID, version = References.VERSION)
@@ -78,6 +87,7 @@ public class CheeseMod
 	public static Item smoked_cheese_slice = new SmokedCheeseSlice();
 	public static Item cheese_sandwich = new CheeseSandwich();
 	public static Item toast = new Toast();
+	public static Item goat_milk = new GoatMilk();
 	
 	// Tool materials
 	public static ToolMaterial cheese = EnumHelper.addToolMaterial("Cheese", 3, 32, 2.0f, 0.0f, 40);
@@ -136,16 +146,23 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_sandwich, "cheese_sandwich");
 		GameRegistry.registerItem(toast, "toast");
 		GameRegistry.registerItem(cheese_powder, "cheese_powder");
+		GameRegistry.registerItem(goat_milk, "goat_milk");
 		
 		// Registering potion
 		GameRegistry.registerItem(cheese_juice, "cheese_juice");
+		
+		// Registering entities
+		EntityRegistry.registerGlobalEntityID(EntityGoat.class, "goat",
+				EntityRegistry.findGlobalUniqueEntityId());
+		
+		proxy.registerRenderInformation();
+		
 	}
 	
 	// Initialization
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		proxy.registerRenderInformation();
 		
 		// NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 		
@@ -179,5 +196,46 @@ public class CheeseMod
 		GameRegistry.addSmelting(new ItemStack(cheese_sandwich), new ItemStack(toast), 0.35f);
 		
 		MinecraftForge.EVENT_BUS.register(new CheeseBlock());
+		
 	}
+	
+	// Post Initialization
+	@EventHandler
+	public void PostInit(FMLPostInitializationEvent event)
+	{
+		
+		// Adding custom entity spawns
+		BiomeDictionary.registerAllBiomesAndGenerateEvents();
+		BiomeGenBase[] goatBiomes = getBiomes(Type.FOREST, Type.JUNGLE, Type.BEACH, Type.PLAINS,
+				Type.HILLS);
+		EntityRegistry.addSpawn(EntityGoat.class, 6, 3, 4, EnumCreatureType.creature, goatBiomes);
+		
+	}
+	
+	// Gathering biome types
+	public BiomeGenBase[] getBiomes(Type... types)
+	{
+		LinkedList<BiomeGenBase> list = new LinkedList<BiomeGenBase>();
+		for (Type t : types)
+		{
+			BiomeGenBase[] biomes = BiomeDictionary.getBiomesForType(t);
+			for (BiomeGenBase x : biomes)
+			{
+				if (BiomeDictionary.isBiomeOfType(x, Type.FROZEN) || x.temperature < 0.32F)
+				{
+					continue;
+				}
+				if (BiomeDictionary.isBiomeOfType(x, Type.WATER))
+				{
+					continue;
+				}
+				if (!list.contains(x))
+				{
+					list.add(x);
+				}
+			}
+		}
+		return (BiomeGenBase[]) list.toArray(new BiomeGenBase[0]);
+	}
+	
 }
