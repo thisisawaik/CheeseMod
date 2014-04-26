@@ -23,3 +23,5 @@ cheese_leggings.name=Cheese Leggings
 cheese_boots.name=Cheese Boots
 
 container.customGuiBlock=Custom Gui
+
+entity.entityGoat.name=Goat

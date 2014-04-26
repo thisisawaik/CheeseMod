@@ -1,6 +1,6 @@
 package com.waik.cheesemod.lib;
 
-public class ProxyCommon
+public class CommonProxy
 {
 	public void registerRenderInformation()
 	{

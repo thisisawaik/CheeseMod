@@ -3,9 +3,11 @@ package com.waik.cheesemod;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -33,7 +35,7 @@ import com.waik.cheesemod.items.CheeseSlice;
 import com.waik.cheesemod.items.GoatMilk;
 import com.waik.cheesemod.items.SmokedCheeseSlice;
 import com.waik.cheesemod.items.Toast;
-import com.waik.cheesemod.lib.ProxyCommon;
+import com.waik.cheesemod.lib.CommonProxy;
 import com.waik.cheesemod.lib.References;
 import com.waik.cheesemod.tools.CheeseAxe;
 import com.waik.cheesemod.tools.CheeseHoe;
@@ -56,7 +58,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class CheeseMod
 {
 	@SidedProxy(clientSide = References.Client, serverSide = References.Common)
-	public static ProxyCommon proxy;
+	public static CommonProxy proxy;
 	
 	// Creative tabs
 	public static CreativeTabs tabCheese = new CreativeTabs("CheeseModTab")
@@ -152,8 +154,18 @@ public class CheeseMod
 		GameRegistry.registerItem(cheese_juice, "cheese_juice");
 		
 		// Registering entities
-		EntityRegistry.registerGlobalEntityID(EntityGoat.class, "goat",
-				EntityRegistry.findGlobalUniqueEntityId());
+		int id = EntityRegistry.findGlobalUniqueEntityId();
+		String name = "entityGoat";
+		
+		long seed = name.hashCode();
+		Random rand = new Random(seed);
+		int primaryColor = rand.nextInt() * 16777215;
+		int secondaryColor = rand.nextInt() * 16777215;
+		
+		EntityRegistry.registerGlobalEntityID(EntityGoat.class, name, id);
+		EntityRegistry.registerModEntity(EntityGoat.class, name, id, instance, 64, 1, true);
+		EntityList.entityEggs.put(id,
+				new EntityList.EntityEggInfo(id, primaryColor, secondaryColor));
 		
 		proxy.registerRenderInformation();
 		
