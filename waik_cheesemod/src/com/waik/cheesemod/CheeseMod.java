@@ -117,6 +117,10 @@ public class CheeseMod
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		// System.out.println("----------DEBUG----------");
+		// System.out.println((float) (1 / 2) == 0.5F);
+		// System.out.println("----------DEBUG----------");
+		
 		// Pairing armor types
 		armorType.put(0, "helmet");
 		armorType.put(1, "chestplate");

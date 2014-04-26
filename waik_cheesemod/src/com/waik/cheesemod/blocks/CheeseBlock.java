@@ -1,10 +1,14 @@
 package com.waik.cheesemod.blocks;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import com.waik.cheesemod.CheeseMod;
@@ -16,6 +20,41 @@ public class CheeseBlock extends Block
 		super(Material.cake);
 		this.setBlockName("cheeseBlock");
 		this.setCreativeTab(CheeseMod.tabCheese);
+		
+		this.setTickRandomly(true);
+	}
+	
+	@Override
+	public void setBlockBoundsBasedOnState(IBlockAccess p_149719_1_, int p_149719_2_,
+			int p_149719_3_, int p_149719_4_)
+	{
+		this.setBlockBounds(1 / 16F, 0 / 16F, 1 / 16F, 15 / 16F, 14 / 16F, 15 / 16F);
+	}
+	
+	@Override
+	public void setBlockBoundsForItemRender()
+	{
+		this.setBlockBounds(1 / 16F, 0 / 16F, 1 / 16F, 15 / 16F, 14 / 16F, 15 / 16F);
+	}
+	
+	@Override
+	public boolean isOpaqueCube()
+	{
+		return false;
+	}
+	
+	@Override
+	public void onEntityWalking(World world, int x, int y, int z, Entity entity)
+	{
+		world.setBlock(x, y, z, CheeseMod.cheese_lamp);
+	}
+	
+	public void updateTick(World world, int x, int y, int z, Random random)
+	{
+		if (random.nextInt(3) == 0)
+		{
+			world.setBlock(x, y, z, CheeseMod.cheese_lamp);
+		}
 	}
 	
 	@Override

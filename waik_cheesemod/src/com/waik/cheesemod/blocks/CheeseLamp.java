@@ -8,7 +8,6 @@ import com.waik.cheesemod.CheeseMod;
 
 public class CheeseLamp extends Block
 {
-	
 	public CheeseLamp()
 	{
 		super(Material.rock);
