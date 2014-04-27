@@ -6,13 +6,13 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 
 import com.waik.cheesemod.CheeseMod;
 
-public class CheeseLamp extends Block
+public class BlockCheeseLamp extends Block
 {
-	public CheeseLamp()
+	public BlockCheeseLamp()
 	{
 		super(Material.rock);
 		this.setLightLevel(1f);
-		this.setBlockName("cheeseBlock");
+		this.setBlockName("cheeseLamp");
 		this.setCreativeTab(CheeseMod.tabCheese);
 	}
 	

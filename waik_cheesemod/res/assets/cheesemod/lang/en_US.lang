@@ -1,6 +1,6 @@
 itemGroup.CheeseModTab=Cheese Stuff
 
-tile.cheeseBlock.name=Cheese Block
+tile.blockCheese.name=Cheese Block
 tile.cheeseLamp.name=Cheese Lamp
 
 item.cheeseSlice.name=Cheese Slice

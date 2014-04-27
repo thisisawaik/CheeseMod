@@ -23,8 +23,8 @@ import net.minecraftforge.common.util.EnumHelper;
 
 import com.waik.cheesemod.armor.CheeseArmor;
 import com.waik.cheesemod.armor.CheeseArmorCrafting;
-import com.waik.cheesemod.blocks.CheeseBlock;
-import com.waik.cheesemod.blocks.CheeseLamp;
+import com.waik.cheesemod.blocks.BlockCheese;
+import com.waik.cheesemod.blocks.BlockCheeseLamp;
 import com.waik.cheesemod.blocks.CustomGuiBlock;
 import com.waik.cheesemod.goat.EntityGoat;
 //import com.waik.cheesemod.gui.GuiHandler;
@@ -74,9 +74,9 @@ public class CheeseMod
 	public static final int guiIdCustomGuiBlock = 0;
 	
 	// Blocks
-	public final static Block cheese_lamp = new CheeseLamp();
+	public final static Block cheese_lamp = new BlockCheeseLamp();
 	
-	public final static Block cheese_block = new CheeseBlock();
+	public final static Block cheese_block = new BlockCheese();
 	public final static Block customGuiIdle = new CustomGuiBlock(false);
 	public final static Block customGuiActive = new CustomGuiBlock(true);
 	
@@ -211,7 +211,7 @@ public class CheeseMod
 				0.25f);
 		GameRegistry.addSmelting(new ItemStack(cheese_sandwich), new ItemStack(toast), 0.35f);
 		
-		MinecraftForge.EVENT_BUS.register(new CheeseBlock());
+		MinecraftForge.EVENT_BUS.register(new BlockCheese());
 		
 	}
 	
